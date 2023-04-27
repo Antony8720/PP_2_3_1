@@ -1,14 +1,10 @@
 package web.dao;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import web.model.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -21,10 +17,7 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public List<User> getAllUsers() {
-        List<User> users = new ArrayList<>();
-        Query query = entityManager.createQuery("from User", User.class);
-        users = query.getResultList();
-        return users;
+        return entityManager.createQuery("from User", User.class).getResultList();
     }
 
     @Override
