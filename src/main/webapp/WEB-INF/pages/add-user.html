@@ -7,7 +7,7 @@
 <body>
 <h2>Add user</h2>
 <br>
-<form th:method="POST"  th:action="@{/users}" th:object="${user}">
+<form th:method="POST"  th:action="@{/users/add}" th:object="${user}">
     <label for="name">Enter name:</label>
     <input type="text" th:field="*{name}" id="name"/>
     <br>

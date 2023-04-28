@@ -21,12 +21,8 @@
         </tr>
 </table>
 <br>
-<form th:method="GET" th:action="@{/users/{id}/update(id=${user.getId()})}">
-    <input type="submit" value="Update">
-</form>
+<a th:href="@{/users/update/(id=${user.getId()})}">Update</a>
 <br>
-<form th:method="DELETE" th:action="@{/users/{id}(id=${user.getId()})}">
-    <input type="submit" value="Delete">
-</form>
+<a th:href="@{/users/delete/(id=${user.getId()})}">Delete</a>
 </body>
 </html>

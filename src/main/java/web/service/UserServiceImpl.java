@@ -19,13 +19,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional
     public List<User> getAllUsers() {
         return userDAO.getAllUsers();
     }
 
     @Override
-    @Transactional
     public User getUserById(int id) {
         return userDAO.getUserById(id);
     }
@@ -38,8 +36,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public User updateUser(User user, int id) {
-        return userDAO.updateUser(user, id);
+    public User updateUser(User user) {
+        return userDAO.updateUser(user);
     }
 
     @Override

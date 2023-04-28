@@ -31,12 +31,8 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public User updateUser(User user, int id) {
-        User userUpd = getUserById(id);
-        userUpd.setId(user.getId());
-        userUpd.setName(Objects.requireNonNull(user.getName(), "Name can`t be null"));
-        userUpd.setSurname(Objects.requireNonNull(user.getSurname(), "Surname can`t be null"));
-        return entityManager.merge(userUpd);
+    public User updateUser(User user) {
+        return entityManager.merge(user);
     }
 
     @Override

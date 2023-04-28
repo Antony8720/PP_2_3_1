@@ -19,7 +19,11 @@
       <td th:text="${user.getName()}"></td>
       <td th:text="${user.getSurname()}"></td>
       <td th:text="${user.getDepartment()}"></td>
-      <td> <a th:href="@{/users/{id}(id=${user.getId()})}">Change information</a></td>
+      <td>
+        <a th:href="@{/users/user(id=${user.getId()})}">All information</a>
+        <a th:href="@{/users/update/(id=${user.getId()})}">Update</a>
+        <a th:href="@{/users/delete/(id=${user.getId()})}">Delete</a>
+      </td>
     </tr>
   </th:block>
 </table>
